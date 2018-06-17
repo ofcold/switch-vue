@@ -2,7 +2,7 @@
 	"name": "ofcold-switch",
 	"version": "1.0.0",
 	"description": "An on/off switch component for Vue.js with theme support.",
-	"main": "index.js",
+	"main": "src/switch.vue",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
@@ -16,5 +16,11 @@
 		"javascript"
 	],
 	"author": "bill li <bill.li@ofcold.com>",
-	"license": "MIT"
+	"license": "MIT",
+	"dependencies": {
+		"vue": "^2.5"
+	},
+	"devDependencies": {
+		"node-sass": "^4.9"
+	}
 }
