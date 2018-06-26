@@ -1,13 +1,5 @@
 <template>
-	<span
-		 class="ofcold-switch"
-		 :class="{
-		 	'ofcold-switch-checked': currentValue === trueValue,
-			'ofcold-switch-disabled': disabled,
-			[`ofcold-switch-${size}`]: !size
-		 }"
-		 @change="toggle"
-	>
+	<span :class="warpperClasses" @click="toggle">
 		<input type="hidden" :name="name" :value="currentValue">
 		<span :class="innerClasses">
 			<slot name="open" v-if="currentValue === trueValue"></slot>
@@ -45,17 +37,19 @@
 				type: String
 			}
 		},
-		data:() => ({
-			currentValue: this.value
-		}),
+		data() {
+			return {
+				currentValue: this.value
+			}
+		},
 		computed: {
-			wrapClasses () {
+			warpperClasses () {
 				return [
-					`${prefixClass}`,
+					'ofcold-switch',
 					{
-						[`${prefixClass}-checked`]: this.currentValue === this.trueValue,
-						[`${prefixClass}-disabled`]: this.disabled,
-						[`${prefixClass}-${this.size}`]: !this.size
+						'ofcold-switch-checked': this.currentValue === this.trueValue,
+						'ofcold-switch-disabled': this.disabled,
+						[`ofcold-switch-${this.size}`]: !!this.size
 					}
 				];
 			},
@@ -89,10 +83,9 @@
 <style lang="scss" scoped>
 .ofcold-switch {
 	display: inline-block;
-	width: 48px;
-	height: 24px;
-	line-height: 22px;
-	border-radius: 24px;
+	width: 59px;
+	height: 28px;
+	border-radius: 28px;
 	vertical-align: middle;
 	border: 1px solid #ccc;
 	background-color: #ccc;
@@ -105,7 +98,7 @@
 		color: #fff;
 		font-size: .875rem;
 		position: absolute;
-		left: 25px;
+		left: 28px;
 
 		i {
 			width: 12px;
@@ -116,9 +109,9 @@
 
 	&:after {
 		content: '';
-		width: 20px;
-		height: 20px;
-		border-radius: 20px;
+		width: 24px;
+		height: 24px;
+		border-radius: 24px;
 		background-color: #fff;
 		position: absolute;
 		left: 1px;
@@ -128,7 +121,7 @@
 	}
 
 	&:active:after {
-		width: 26px;
+		width: 28px;
 	}
 
 	&:focus {
@@ -140,48 +133,6 @@
 		box-shadow: none;
 	}
 
-	&-sm {
-		width: 24px;
-		height: 12px;
-		line-height: 10px;
-		&:after {
-			width: 10px;
-			height: 10px;
-			top: 0;
-			left: 0;
-		}
-		&:active:after {
-			width: 14px;
-		}
-	}
-
-	&-sm.ofcold-switch__-checked:after {
-		left: 12px;
-	}
-
-	&--sm:active.ofcold-switch__-checked:after {
-		left: 8px;
-	}
-
-	&-lg{
-		width: 60px;
-		&:active:after {
-			width: 26px;
-		}
-	}
-
-	&-lg:active:after {
-		width: 32px;
-	}
-
-	&-lg.ofcold-switch__-checked:after {
-		left: 37px;
-	}
-
-	&-lg:active.ofcold-switch__-checked:after {
-		left: 25px;
-	}
-
 	&-checked {
 		border-color: #21272e;
 		background-color: #21272e;
@@ -191,7 +142,7 @@
 		}
 
 		&:after {
-			left: 25px;
+			left: 32px;
 		}
 
 		&:active:after {
@@ -212,6 +163,49 @@
 		.ofcold-switch__-inner {
 			color: #ccc;
 		}
+	}
+
+	&-sm {
+		width: 24px;
+		height: 12px;
+		line-height: 10px;
+		&:after {
+			width: 10px;
+			height: 10px;
+			top: 0;
+			left: 0;
+		}
+		&:active:after {
+			width: 14px;
+		}
+	}
+
+	&-sm.ofcold-switch-checked:after {
+		left: 12px;
+	}
+
+	&--sm:active.ofcold-switch-checked:after {
+		left: 8px;
+	}
+
+	&-lg{
+		width: 99px;
+		height: 44px;
+		&:after {
+			width: 36px;
+			height: 36px;
+			border-radius: 36px;
+			left: 3px;
+			top: 3px;
+		}
+	}
+
+	&-lg.ofcold-switch-checked:after {
+		left: 58px;
+	}
+
+	&-lg:active.ofcold-switch-checked:after {
+		left: 58px;
 	}
 }
 </style>
