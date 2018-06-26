@@ -47,7 +47,7 @@
 					{
 						[`${prefixClass}-checked`]: this.currentValue === this.trueValue,
 						[`${prefixClass}-disabled`]: this.disabled,
-						[`${prefixClass}-${this.size}`]: !!this.size
+						[`${prefixClass}-${this.size}`]: !this.size
 					}
 				];
 			},
