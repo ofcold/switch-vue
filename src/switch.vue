@@ -1,5 +1,5 @@
 <template>
-	<span :class="wrapClasses" @click="toggle">
+	<span :class="wrapClasses" @change="toggle">
 		<input type="hidden" :name="name" :value="currentValue">
 		<span :class="innerClasses">
 			<slot name="open" v-if="currentValue === trueValue"></slot>
@@ -30,7 +30,7 @@
 			},
 			size: {
 				validator (value) {
-					return (new Array('sm', 'md', 'lg')).indexOf(value) >= 0;
+					return (new Array('sm', 'lg')).indexOf(value) >= 0;
 				}
 			},
 			name: {
@@ -133,7 +133,7 @@
 		box-shadow: none;
 	}
 
-	&-small {
+	&-sm {
 		width: 24px;
 		height: 12px;
 		line-height: 10px;
@@ -148,30 +148,30 @@
 		}
 	}
 
-	&-small.ofcold-switch__-checked:after {
+	&-sm.ofcold-switch__-checked:after {
 		left: 12px;
 	}
 
-	&--small:active.ofcold-switch__-checked:after {
+	&--sm:active.ofcold-switch__-checked:after {
 		left: 8px;
 	}
 
-	&-large{
+	&-lg{
 		width: 60px;
 		&:active:after {
 			width: 26px;
 		}
 	}
 
-	&-large:active:after {
+	&-lg:active:after {
 		width: 32px;
 	}
 
-	&-large.ofcold-switch__-checked:after {
+	&-lg.ofcold-switch__-checked:after {
 		left: 37px;
 	}
 
-	&-large:active.ofcold-switch__-checked:after {
+	&-lg:active.ofcold-switch__-checked:after {
 		left: 25px;
 	}
 
