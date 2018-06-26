@@ -8,7 +8,7 @@
 	</span>
 </template>
 <script>
-	const prefixClass = 'ofcold-switch__';
+	const prefixClass = 'ofcold-switch';
 	export default {
 		name: 'OfcoldSwitch',
 		props: {
@@ -47,9 +47,9 @@
 				return [
 					`${prefixClass}`,
 					{
-						[`${prefixClass}-checked`]: this.currentValue === this.trueValue,
-						[`${prefixClass}-disabled`]: this.disabled,
-						[`${prefixClass}-${this.size}`]: !!this.size
+						[`${prefixClass}__-checked`]: this.currentValue === this.trueValue,
+						[`${prefixClass}__-disabled`]: this.disabled,
+						[`${prefixClass}__-${this.size}`]: !!this.size
 					}
 				];
 			},
@@ -80,7 +80,7 @@
 </script>
 
 <style lang="scss" scoped>
-.ofcold-switch__-switch {
+.ofcold-switch {
 	display: inline-block;
 	width: 48px;
 	height: 24px;
@@ -148,11 +148,11 @@
 		}
 	}
 
-	&-small.ofcold-switch__-switch-checked:after {
+	&-small.ofcold-switch__-checked:after {
 		left: 12px;
 	}
 
-	&--small:active.ofcold-switch__-switch-checked:after {
+	&--small:active.ofcold-switch__-checked:after {
 		left: 8px;
 	}
 
@@ -167,11 +167,11 @@
 		width: 32px;
 	}
 
-	&-large.ofcold-switch__-switch-checked:after {
+	&-large.ofcold-switch__-checked:after {
 		left: 37px;
 	}
 
-	&-large:active.ofcold-switch__-switch-checked:after {
+	&-large:active.ofcold-switch__-checked:after {
 		left: 25px;
 	}
 
@@ -179,7 +179,7 @@
 		border-color: #21272e;
 		background-color: #21272e;
 
-		.ofcold-switch__-switch-inner {
+		.ofcold-switch__-inner {
 			left: 8px;
 		}
 
@@ -202,7 +202,7 @@
 			cursor: not-allowed;
 		}
 
-		.ofcold-switch__-switch-inner {
+		.ofcold-switch__-inner {
 			color: #ccc;
 		}
 	}
