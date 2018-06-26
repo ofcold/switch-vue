@@ -37,11 +37,9 @@
 				type: String
 			}
 		},
-		data () {
-			return {
-				currentValue: this.value
-			};
-		},
+		data:() => ({
+			currentValue: this.value
+		}),
 		computed: {
 			wrapClasses () {
 				return [
@@ -62,6 +60,7 @@
 				if (this.disabled) {
 					return false;
 				}
+
 				const checked = this.currentValue === this.trueValue ? this.falseValue : this.trueValue;
 				this.currentValue = checked;
 				this.$emit('input', checked);
