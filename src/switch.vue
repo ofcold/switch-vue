@@ -1,5 +1,13 @@
 <template>
-	<span :class="wrapClasses" @change="toggle">
+	<span
+		 class="ofcold-switch"
+		 :class="{
+		 	'ofcold-switch-checked': currentValue === trueValue,
+			'ofcold-switch-disabled': disabled,
+			[`ofcold-switch-${size}`]: !size
+		 }"
+		 @change="toggle"
+	>
 		<input type="hidden" :name="name" :value="currentValue">
 		<span :class="innerClasses">
 			<slot name="open" v-if="currentValue === trueValue"></slot>
@@ -52,7 +60,7 @@
 				];
 			},
 			innerClasses () {
-				return `${prefixClass}-inner`;
+				return 'ofcold-switch-inner';
 			}
 		},
 		methods: {
