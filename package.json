@@ -21,7 +21,6 @@
 		"vue": "^2.5"
 	},
 	"devDependencies": {
-		"cross-env": "^5.2.0",
 		"node-sass": "^4.9"
 	}
 }
