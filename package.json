@@ -1,6 +1,6 @@
 {
 	"name": "ofcold-switch",
-	"version": "1.0.6",
+	"version": "1.0.7",
 	"description": "An on/off switch component for Vue.js with theme support.",
 	"main": "src/switch.vue",
 	"scripts": {
