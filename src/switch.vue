@@ -96,7 +96,7 @@
 
 	&-inner {
 		color: #fff;
-		font-size: $font-size-sm;
+		font-size: .875rem;
 		position: absolute;
 		left: 25px;
 
@@ -125,7 +125,7 @@
 	}
 
 	&:focus {
-		box-shadow: 0 0 0 2px fade($gray-dark, 20%);
+		box-shadow: 0 0 0 2px fade(#21272e, 20%);
 		outline: 0;
 	}
 
@@ -176,8 +176,8 @@
 	}
 
 	&-checked {
-		border-color: $gray-dark;
-		background-color: $gray-dark;
+		border-color: #21272e;
+		background-color: #21272e;
 
 		.ofcold-switch__-switch-inner {
 			left: 8px;
