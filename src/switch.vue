@@ -8,7 +8,6 @@
 	</span>
 </template>
 <script>
-	const prefixClass = 'ofcold-switch';
 	export default {
 		name: 'OfcoldSwitch',
 		props: {
@@ -37,17 +36,12 @@
 				type: String
 			}
 		},
-		data() {
-			return {
-				currentValue: this.value
-			}
-		},
 		computed: {
 			warpperClasses () {
 				return [
 					'ofcold-switch',
 					{
-						'ofcold-switch-checked': this.currentValue === this.trueValue,
+						'ofcold-switch-checked': this.value === this.trueValue,
 						'ofcold-switch-disabled': this.disabled,
 						[`ofcold-switch-${this.size}`]: !!this.size
 					}
@@ -63,18 +57,17 @@
 					return false;
 				}
 
-				const checked = this.currentValue === this.trueValue ? this.falseValue : this.trueValue;
-				this.currentValue = checked;
+				const checked = this.value === this.trueValue ? this.falseValue : this.trueValue;
+				this.value = checked;
 				this.$emit('input', checked);
-				this.$emit('on-change', checked);
 			}
 		},
 		watch: {
 			value (val) {
 				if (val !== this.trueValue && val !== this.falseValue) {
-					throw 'Value should be trueValue or falseValue.';
+					throw 'Ofcold Switch Value should be trueValue or falseValue.';
 				}
-				this.currentValue = val;
+				this.value = val;
 			}
 		}
 	};
@@ -184,7 +177,7 @@
 		left: 12px;
 	}
 
-	&--sm:active.ofcold-switch-checked:after {
+	&-sm:active.ofcold-switch-checked:after {
 		left: 8px;
 	}
 
